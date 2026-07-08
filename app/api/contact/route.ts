@@ -62,24 +62,20 @@ export async function POST(req: NextRequest) {
       console.info("Contact form submission (no RESEND_API_KEY configured):\n", lines);
     }
 
-    // ── 2. Google Sheets webhook (fire-and-forget) ─────────────────────────────
+    // ── 2. Google Sheets webhook (GET + query params — avoids redirect body loss) ──
     if (sheetUrl) {
-      // We don't await — log to sheet in background so it never slows the response.
-      fetch(sheetUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name,
-          phone,
-          city:    city    || "",
-          project: project || "",
-          type:    type    || "",
-          message: message || "",
-          source:  "Website Form",
-          // ISO timestamp — Apps Script converts to PKT using Utilities.formatDate
-          timestamp: new Date().toISOString(),
-        }),
-      }).catch((err) => console.error("Sheet webhook error:", err));
+      const params = new URLSearchParams({
+        name,
+        phone,
+        city:      city    || "",
+        project:   project || "",
+        type:      type    || "",
+        message:   message || "",
+        source:    "Website Form",
+        timestamp: new Date().toISOString(),
+      });
+      fetch(`${sheetUrl}?${params.toString()}`)
+        .catch((err) => console.error("Sheet webhook error:", err));
     }
 
     return NextResponse.json({ ok: true });

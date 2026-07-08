@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { site } from "@/lib/site";
 
-// Contact form API route — sends enquiries via Resend (https://resend.com).
-// Set RESEND_API_KEY in .env.local and CONTACT_TO_EMAIL to the destination inbox.
-// If RESEND_API_KEY is absent the handler gracefully skips sending and returns success
-// so local development without credentials never throws.
+// Contact form API route.
+// Destinations (all optional — if env var is absent the step is silently skipped):
+//   1. Resend email  →  RESEND_API_KEY + CONTACT_TO_EMAIL
+//   2. Google Sheets →  GOOGLE_SHEET_WEBHOOK_URL  (Apps Script Web App URL)
+// WhatsApp is handled client-side in ContactForm.tsx.
 
 export async function POST(req: NextRequest) {
   try {
@@ -15,8 +16,9 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Name and phone are required." }, { status: 400 });
     }
 
-    const apiKey = process.env.RESEND_API_KEY;
-    const toEmail = process.env.CONTACT_TO_EMAIL ?? site.email;
+    const apiKey   = process.env.RESEND_API_KEY;
+    const toEmail  = process.env.CONTACT_TO_EMAIL ?? site.email;
+    const sheetUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL;
 
     // Build a clean plain-text body for the email notification.
     const lines = [
@@ -34,6 +36,7 @@ export async function POST(req: NextRequest) {
       .filter((l) => l !== null)
       .join("\n");
 
+    // ── 1. Resend email ────────────────────────────────────────────────────────
     if (apiKey) {
       const res = await fetch("https://api.resend.com/emails", {
         method: "POST",
@@ -46,7 +49,6 @@ export async function POST(req: NextRequest) {
           to: [toEmail],
           subject: `New Enquiry — ${name} (${project || "General"})`,
           text: lines,
-          // Simple HTML version for nicer inbox display.
           html: `<pre style="font-family:sans-serif;line-height:1.6">${lines.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")}</pre>`,
         }),
       });
@@ -54,11 +56,30 @@ export async function POST(req: NextRequest) {
       if (!res.ok) {
         const err = await res.text();
         console.error("Resend error:", err);
-        return NextResponse.json({ error: "Failed to send email. Please try WhatsApp instead." }, { status: 502 });
+        // Don't fail the whole request — sheet logging may still work.
       }
     } else {
-      // No API key — log locally so the developer can see the submission.
       console.info("Contact form submission (no RESEND_API_KEY configured):\n", lines);
+    }
+
+    // ── 2. Google Sheets webhook (fire-and-forget) ─────────────────────────────
+    if (sheetUrl) {
+      // We don't await — log to sheet in background so it never slows the response.
+      fetch(sheetUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          phone,
+          city:    city    || "",
+          project: project || "",
+          type:    type    || "",
+          message: message || "",
+          source:  "Website Form",
+          // ISO timestamp — Apps Script converts to PKT using Utilities.formatDate
+          timestamp: new Date().toISOString(),
+        }),
+      }).catch((err) => console.error("Sheet webhook error:", err));
     }
 
     return NextResponse.json({ ok: true });

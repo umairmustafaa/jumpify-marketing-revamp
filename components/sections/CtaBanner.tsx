@@ -34,12 +34,20 @@ export function CtaBanner() {
               >
                 Reserve Your Plot <Icon name="arrow" width={18} height={18} />
               </Link>
-              <a
-                href={`tel:${site.phoneHref}`}
-                className="inline-flex items-center gap-2 rounded-full border border-white/25 px-7 py-3.5 font-semibold text-white hover:bg-white/10 transition-colors"
-              >
-                <Icon name="phone" width={17} height={17} /> {site.phone}
-              </a>
+              <div className="flex flex-col items-center gap-1.5">
+                <a
+                  href={`tel:${site.phoneHref}`}
+                  className="inline-flex items-center gap-2 rounded-full border border-white/25 px-7 py-3.5 font-semibold text-white hover:bg-white/10 transition-colors"
+                >
+                  <Icon name="phone" width={17} height={17} /> {site.phone}
+                </a>
+                <a
+                  href={`tel:${site.phoneHref2}`}
+                  className="text-xs text-white/55 hover:text-gold-light transition-colors"
+                >
+                  Alt: {site.phone2}
+                </a>
+              </div>
             </div>
           </div>
         </Reveal>

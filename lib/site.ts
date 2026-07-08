@@ -13,6 +13,9 @@ export const site = {
   phone: "+92 340 8988872",
   phoneHref: "+923408988872",
   whatsapp: "923408988872",
+  phone2: "+92 339 9955566",
+  phoneHref2: "+923399955566",
+  whatsapp2: "923399955566",
   email: "jumpifymarketing@gmail.com",
   address: {
     line1: "Office No. N99, Sikandarabad",

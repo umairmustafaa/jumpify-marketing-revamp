@@ -5,6 +5,7 @@ import { Icon } from "@/components/Icons";
 
 const details = [
   { icon: "phone", label: "Call / WhatsApp", value: site.phone, href: `tel:${site.phoneHref}` },
+  { icon: "phone", label: "Alternative Number", value: site.phone2, href: `tel:${site.phoneHref2}` },
   { icon: "mail", label: "Email Us", value: site.email, href: `mailto:${site.email}` },
   {
     icon: "pin",

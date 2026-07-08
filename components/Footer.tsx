@@ -107,9 +107,14 @@ export function Footer() {
             </li>
             <li className="flex gap-3">
               <Icon name="phone" width={18} height={18} className="text-gold shrink-0 mt-0.5" />
-              <a href={`tel:${site.phoneHref}`} className="text-white/60 hover:text-gold">
-                {site.phone}
-              </a>
+              <div className="flex flex-col gap-0.5">
+                <a href={`tel:${site.phoneHref}`} className="text-white/60 hover:text-gold">
+                  {site.phone}
+                </a>
+                <a href={`tel:${site.phoneHref2}`} className="text-white/50 hover:text-gold text-xs">
+                  {site.phone2} <span className="opacity-60">(Alt)</span>
+                </a>
+              </div>
             </li>
             <li className="flex gap-3">
               <Icon name="mail" width={18} height={18} className="text-gold shrink-0 mt-0.5" />

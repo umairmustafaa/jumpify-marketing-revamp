@@ -67,13 +67,21 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-3">
-          <a
-            href={`tel:${site.phoneHref}`}
-            className="inline-flex items-center gap-2 text-sm font-medium text-navy hover:text-gold-dark transition-colors"
-          >
-            <Icon name="phone" width={16} height={16} className="text-gold-dark" />
-            {site.phone}
-          </a>
+          <div className="flex flex-col items-end gap-0.5">
+            <a
+              href={`tel:${site.phoneHref}`}
+              className="inline-flex items-center gap-2 text-sm font-medium text-navy hover:text-gold-dark transition-colors"
+            >
+              <Icon name="phone" width={16} height={16} className="text-gold-dark" />
+              {site.phone}
+            </a>
+            <a
+              href={`tel:${site.phoneHref2}`}
+              className="text-xs text-navy/55 hover:text-gold-dark transition-colors pl-6"
+            >
+              {site.phone2} <span className="opacity-60">(Alt)</span>
+            </a>
+          </div>
           <Link
             href="/contact"
             className="inline-flex items-center gap-2 rounded-full bg-navy px-5 py-2.5 text-sm font-semibold text-white hover:bg-navy-600 transition-colors"

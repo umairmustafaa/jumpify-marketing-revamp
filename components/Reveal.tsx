@@ -8,11 +8,13 @@ export function Reveal({
   delay = 0,
   className = "",
   as: Tag = "div",
+  id,
 }: {
   children: React.ReactNode;
   delay?: number;
   className?: string;
   as?: React.ElementType;
+  id?: string;
 }) {
   const ref = useRef<HTMLElement | null>(null);
   const [shown, setShown] = useState(false);
@@ -36,6 +38,7 @@ export function Reveal({
   return (
     <Tag
       ref={ref}
+      id={id}
       className={className}
       style={{
         opacity: shown ? 1 : 0,

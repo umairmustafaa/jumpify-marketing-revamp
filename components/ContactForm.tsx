@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { projects, site } from "@/lib/site";
+import { reportConversion, trackEvent } from "@/lib/gtag";
 import { Icon } from "./Icons";
 
 const propertyTypes = ["Residential Plot", "Commercial Plot", "Constructed House", "File / Investment"];
@@ -56,6 +57,10 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
       .join("\n");
 
     window.open(`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(text)}`, "_blank");
+
+    // Fire the Google Ads lead conversion + analytics event.
+    reportConversion("lead");
+    trackEvent("generate_lead", { form: "contact_form", project: project || "unspecified" });
 
     setState("success");
     form.reset();

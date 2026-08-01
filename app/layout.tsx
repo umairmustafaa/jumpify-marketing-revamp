@@ -5,6 +5,8 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { StickyContactBar } from "@/components/StickyContactBar";
+import { ConversionTracking } from "@/components/ConversionTracking";
 import { JsonLd, organizationSchema } from "@/components/JsonLd";
 import { site } from "@/lib/site";
 
@@ -68,9 +70,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className="antialiased">
         <JsonLd data={organizationSchema} />
         <Header />
-        <main>{children}</main>
+        <main className="pb-16 lg:pb-0">{children}</main>
         <Footer />
         <WhatsAppButton />
+        <StickyContactBar />
+        <ConversionTracking />
         <Script src="https://www.googletagmanager.com/gtag/js?id=AW-17999922348" strategy="afterInteractive" />
         <Script id="google-ads" strategy="afterInteractive">
           {`

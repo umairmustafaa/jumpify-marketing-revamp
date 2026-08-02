@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { site } from "@/lib/site";
-import { ft2, ft2Faqs, residentialPlan } from "@/lib/ft2";
+import { ft2, ft2Faqs, installmentPlan } from "@/lib/ft2";
 import { JsonLd } from "@/components/JsonLd";
 import { Ft2Hero } from "@/components/sections/Ft2Hero";
 import { QuickFacts } from "@/components/sections/QuickFacts";
@@ -21,7 +21,7 @@ import { ContactSection } from "@/components/sections/ContactSection";
 export const metadata: Metadata = {
   title: "Faisal Town Phase 2 — Payment Plan, Location, Prices & Booking 2026",
   description:
-    "Faisal Town Phase 2 Islamabad — updated 2026 payment plan, plot prices, location map, NOC status & booking. 5 Marla from PKR 39.75 Lac on easy installments. Authorised sales partner — call for the latest rates.",
+    "Faisal Town Phase 2 Islamabad — updated 2026 payment plan, plot prices, location map, NOC status & booking. 5 Marla from PKR 27.9 Lac on full payment, or easy 36-month installments. Authorised sales partner — call for the latest rates.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "Faisal Town Phase 2 — Payment Plan, Location & Booking 2026",
@@ -37,15 +37,15 @@ export default function HomePage() {
     "@type": "Product",
     name: "Faisal Town Phase 2 — Residential Plots",
     description:
-      "Residential plots (5, 8, 10, 14 Marla, 1 & 2 Kanal) in Faisal Town Phase 2, Islamabad on an easy 4-year installment plan.",
+      "Residential plots (5, 8, 10, 14 Marla, 1 & 2 Kanal) in Faisal Town Phase 2, Islamabad on full-payment or 36-month installment plans.",
     brand: { "@type": "Brand", name: "Faisal Town Phase 2" },
     category: "Real Estate",
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "PKR",
-      lowPrice: "3975000",
-      highPrice: "12330000",
-      offerCount: String(residentialPlan.length),
+      lowPrice: "2790000",
+      highPrice: "19295000",
+      offerCount: String(installmentPlan.length),
       availability: "https://schema.org/InStock",
       seller: { "@type": "RealEstateAgent", name: site.name },
     },

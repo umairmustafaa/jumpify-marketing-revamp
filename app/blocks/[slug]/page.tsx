@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { blockPages, blocks, residentialPlan, highVolumeBlockSlugs } from "@/lib/ft2";
+import { blockPages, blocks, modelBlockPlan, installmentPlan, highVolumeBlockSlugs } from "@/lib/ft2";
 import { site } from "@/lib/site";
 import { PageHeader } from "@/components/PageHeader";
 import { ContactForm } from "@/components/ContactForm";
@@ -117,32 +117,61 @@ export default async function BlockDetailPage({
             <Reveal className="mt-10">
               <h2 className="text-2xl font-semibold text-navy">{block.name} Payment Plan</h2>
               <p className="mt-2 leading-relaxed text-muted">{page.planStructure}</p>
-              {page.usesStandardGrid && (
+
+              {page.planType === "model" && (
                 <div className="mt-4 overflow-x-auto rounded-2xl border border-black/5">
                   <table className="w-full min-w-[520px] text-left text-sm">
                     <thead className="bg-navy text-white">
                       <tr>
                         <th className="px-5 py-3.5 font-semibold">Plot Size</th>
-                        <th className="px-5 py-3.5 font-semibold">Total Price*</th>
-                        <th className="px-5 py-3.5 font-semibold">Down Payment</th>
-                        <th className="px-5 py-3.5 font-semibold">Quarterly ×16</th>
+                        <th className="px-5 py-3.5 font-semibold">Dimensions</th>
+                        <th className="px-5 py-3.5 font-semibold">Actual Price</th>
+                        <th className="px-5 py-3.5 font-semibold">After 20% Discount</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {residentialPlan.map((row, i) => (
+                      {modelBlockPlan.map((row, i) => (
                         <tr key={row.size} className={i % 2 ? "bg-cream/50" : "bg-white"}>
                           <td className="px-5 py-3.5 font-semibold text-navy">{row.size}</td>
-                          <td className="px-5 py-3.5 text-gold-dark">{row.total}</td>
-                          <td className="px-5 py-3.5 text-muted">{row.down}</td>
-                          <td className="px-5 py-3.5 text-muted">{row.quarterly}</td>
+                          <td className="px-5 py-3.5 text-muted">{row.dim}</td>
+                          <td className="px-5 py-3.5 text-muted">{row.actualPrice}</td>
+                          <td className="px-5 py-3.5 font-semibold text-gold-dark">{row.cashPrice}</td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
                 </div>
               )}
+
+              {page.planType === "installment" && (
+                <div className="mt-4 overflow-x-auto rounded-2xl border border-black/5">
+                  <table className="w-full min-w-[560px] text-left text-sm">
+                    <thead className="bg-navy text-white">
+                      <tr>
+                        <th className="px-4 py-3.5 font-semibold">Plot Size</th>
+                        <th className="px-4 py-3.5 font-semibold">Cost of Plot</th>
+                        <th className="px-4 py-3.5 font-semibold">Down Payment</th>
+                        <th className="px-4 py-3.5 font-semibold">36 Monthly</th>
+                        <th className="px-4 py-3.5 font-semibold">Lump-sum</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {installmentPlan.map((row, i) => (
+                        <tr key={row.size} className={i % 2 ? "bg-cream/50" : "bg-white"}>
+                          <td className="px-4 py-3.5 font-semibold text-navy">{row.size}</td>
+                          <td className="px-4 py-3.5 text-muted">{row.cost}</td>
+                          <td className="px-4 py-3.5 text-muted">{row.down}</td>
+                          <td className="px-4 py-3.5 font-semibold text-gold-dark">{row.monthly}</td>
+                          <td className="px-4 py-3.5 text-muted">{row.cashPrice}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+
               <p className="mt-3 text-xs text-muted">
-                *Indicative society-wide residential rates for reference. {page.extraPlanNote}{" "}
+                Official developer rates (development charges included). {page.extraPlanNote}{" "}
                 Confirm the current block-specific rate list before booking.
               </p>
             </Reveal>

@@ -22,43 +22,78 @@ export const ft2 = {
   // Short, keyword-rich descriptors reused in meta + hero.
   headline: "Faisal Town Phase 2 — Payment Plan, Location & Booking 2026",
   subheadline:
-    "Book your plot in Faisal Town Phase 2, Islamabad on an easy 4-year installment plan. Prime location on the M-2 Motorway at Thalian Interchange, minutes from the New Islamabad International Airport.",
+    "Book your plot in Faisal Town Phase 2, Islamabad on full payment or an easy 36-month installment plan. Prime location on the M-2 Motorway at Thalian Interchange, minutes from the New Islamabad International Airport.",
 
   // At-a-glance facts (quick-facts strip)
   quickFacts: [
     { label: "Location", value: "Thalian Interchange, M-2 Motorway" },
-    { label: "Developer", value: "CAM Construction — Ch. Abdul Majeed" },
-    { label: "Plot Sizes", value: "5, 8, 10, 14 Marla · 1 & 2 Kanal" },
-    { label: "Down Payment", value: "From ~20%" },
-    { label: "Plan", value: "4 Years · 16 Quarterly Installments" },
+    { label: "Developer", value: "Faisal Town Group (Ch. Abdul Majeed)" },
+    { label: "Plot Sizes", value: "5 – 14 Marla · 1 & 2 Kanal" },
+    { label: "Lump-sum Discount", value: "20% on Full Payment" },
+    { label: "Payment Plan", value: "Full Payment or 36 Monthly" },
     { label: "Status", value: "Booking Open · NOC in Process" },
   ],
 
-  // Lead-gen hero price hook (indicative, revised Apr 2026)
+  // Lead-gen hero price hook (official rate — 5.56 Marla lump-sum price).
   priceHook: {
     fromSize: "5 Marla",
-    fromPrice: "PKR 39.75 Lac",
-    note: "Easy 4-year installment plan",
+    fromPrice: "PKR 27.9 Lac",
+    note: "on full payment · installments available",
   },
 };
 
-// ── Residential payment plan (indicative, post-Apr-2026 revision) ──────────
-// Quarterly ≈ (total − down) / 16.
-export type PlanRow = {
+// ─────────────────────────────────────────────────────────────────────────
+// OFFICIAL payment plans (from the Faisal Town Group rate sheets).
+//  • Model Block (Sector O, Q & R): discount applies on FULL PAYMENT only.
+//  • Overseas Enclave / installment blocks: 36 monthly installments.
+// Development charges are included in the prices. Payment via pay order /
+// demand draft / cash to "Faisal Town (Pvt.) Ltd." — cheques not accepted.
+// ─────────────────────────────────────────────────────────────────────────
+
+// Model Block — Sector O, Q & R (full-payment plan)
+export type CashPlanRow = {
   size: string;
   dim: string;
-  total: string;
-  down: string;
-  quarterly: string;
+  actualPrice: string; // incl. registration
+  cashPrice: string; // after 20% full-payment discount
 };
 
-export const residentialPlan: PlanRow[] = [
-  { size: "5 Marla", dim: "25×50", total: "PKR 3,975,000", down: "PKR 795,000", quarterly: "PKR 198,750" },
-  { size: "8 Marla", dim: "30×60", total: "PKR 5,540,000", down: "PKR 1,108,000", quarterly: "PKR 277,000" },
-  { size: "10 Marla", dim: "35×70", total: "PKR 7,260,000", down: "PKR 1,452,000", quarterly: "PKR 363,000" },
-  { size: "14 Marla", dim: "40×80", total: "PKR 9,140,000", down: "PKR 1,828,000", quarterly: "PKR 457,000" },
-  { size: "1 Kanal", dim: "50×90", total: "PKR 12,330,000", down: "PKR 2,466,000", quarterly: "PKR 616,500" },
-  { size: "2 Kanal", dim: "75×120", total: "On Request", down: "—", quarterly: "—" },
+export const modelBlockPlan: CashPlanRow[] = [
+  { size: "5.56 Marla", dim: "25×50 · 139 sq yd", actualPrice: "PKR 3,495,000", cashPrice: "PKR 2,790,000" },
+  { size: "8 Marla", dim: "30×60 · 200 sq yd", actualPrice: "PKR 4,665,000", cashPrice: "PKR 3,730,000" },
+  { size: "10.89 Marla", dim: "35×70 · 272 sq yd", actualPrice: "PKR 6,065,000", cashPrice: "PKR 4,850,000" },
+  { size: "14.22 Marla", dim: "40×80 · 356 sq yd", actualPrice: "PKR 7,585,000", cashPrice: "PKR 6,060,000" },
+  { size: "1 Kanal", dim: "50×90 · 500 sq yd", actualPrice: "PKR 10,155,000", cashPrice: "PKR 8,120,000" },
+];
+
+// Overseas Enclave / installment blocks — 36 monthly installments
+export type InstallmentRow = {
+  size: string;
+  dim: string;
+  cost: string; // cost of plot (installment)
+  down: string; // down payment
+  monthly: string; // 36 monthly installments
+  cashPrice: string; // 20% lump-sum price
+};
+
+export const installmentPlan: InstallmentRow[] = [
+  { size: "5.56 Marla", dim: "25×50 · 139 sq yd", cost: "PKR 3,495,000", down: "PKR 1,335,000", monthly: "PKR 60,000", cashPrice: "PKR 2,790,000" },
+  { size: "8 Marla", dim: "30×60 · 200 sq yd", cost: "PKR 4,665,000", down: "PKR 1,785,000", monthly: "PKR 80,000", cashPrice: "PKR 3,730,000" },
+  { size: "10.89 Marla", dim: "35×70 · 272 sq yd", cost: "PKR 6,065,000", down: "PKR 2,285,000", monthly: "PKR 105,000", cashPrice: "PKR 4,850,000" },
+  { size: "14.22 Marla", dim: "40×80 · 356 sq yd", cost: "PKR 7,585,000", down: "PKR 2,725,000", monthly: "PKR 135,000", cashPrice: "PKR 6,060,000" },
+  { size: "1 Kanal", dim: "50×90 · 500 sq yd", cost: "PKR 10,155,000", down: "PKR 3,495,000", monthly: "PKR 185,000", cashPrice: "PKR 8,120,000" },
+  { size: "2 Kanal", dim: "75×120 · 1000 sq yd", cost: "PKR 19,295,000", down: "PKR 5,975,000", monthly: "PKR 370,000", cashPrice: "PKR 15,430,000" },
+];
+
+// Plot-size options for the lead form dropdown.
+export const plotSizeOptions = installmentPlan.map((r) => r.size);
+
+// Booking terms shown under the payment tables.
+export const paymentNotes = [
+  "Development charges are included in the plot price.",
+  "Payment via pay order / demand draft / cash in favour of “Faisal Town (Pvt.) Ltd.” Cheques are not accepted.",
+  "Corner, main-road, and park/lake-facing plots carry additional charges (typically 5–15%).",
+  "Prices are per the developer’s current rate sheet and may be revised — confirm before booking.",
 ];
 
 // ── Blocks / sectors — the complete directory ──────────────────────────────
@@ -88,7 +123,7 @@ export const blocks: Block[] = [
     type: "Residential",
     tag: "Flagship · Faster Possession",
     plotSizes: "5, 8, 10, 14 Marla · 1 Kanal (+ commercial)",
-    payment: "Flexible installments; ~20% cash discount. Commercial: 25% down, 4-year plan.",
+    payment: "Full payment with a 20% discount (Sector O, Q & R). Commercial: 25% down, multi-year plan.",
     location: "Between the Chakri & Thalian interchanges with direct M-2 and Rawalpindi Ring Road access.",
     features: ["Semi-developed, amenity-rich", "Wide carpeted roads", "Malls & sports complexes", "Jogging tracks & parks"],
     bestFor: "End-users wanting faster possession and investors seeking quicker appreciation.",
@@ -102,7 +137,7 @@ export const blocks: Block[] = [
     type: "Residential",
     tag: "Premium · For Overseas",
     plotSizes: "5, 8, 10, 14 Marla · 1 & 2 Kanal",
-    payment: "4.5-year plan: down payment + 15 quarterly installments + final payment; ~20% cash discount.",
+    payment: "Down payment + 36 monthly installments; 20% lump-sum discount. Plots up to 2 Kanal.",
     location: "Close to the Thalian Interchange on the M-2, ~10–15 min from Islamabad International Airport.",
     features: ["365-ft main boulevard", "40%+ open space", "Gated, 24/7 security", "Intl-standard schools & hospital"],
     bestFor: "Overseas Pakistanis and investors wanting a premium, secure address.",
@@ -156,7 +191,7 @@ export const blocks: Block[] = [
     type: "Residential",
     tag: "Wide Boulevards",
     plotSizes: "5, 8, 10, 14 Marla · 1 Kanal",
-    payment: "4.5-year installment system; ~20% early-booking / full-payment discount.",
+    payment: "36-month installment plan; 20% lump-sum / full-payment discount.",
     location: "East of the Overseas Enclave, near the Rawalpindi Ring Road; ~4 min to M-2, ~5 min to airport.",
     features: ["120–180 ft roads, ~350-ft boulevard", "Meinhardt master plan", "Parks & mosques", "Underground utilities"],
     bestFor: "Starter-plot families and investors betting on corridor growth.",
@@ -169,7 +204,7 @@ export const blocks: Block[] = [
     type: "Mixed-Use",
     tag: "Widest Size Range",
     plotSizes: "5, 8, 10, 14 Marla · 1 & 2 Kanal (+ commercial)",
-    payment: "4.5-year plan with published down payments per size; 20% lump-sum discount.",
+    payment: "36-month installment plan with a down payment per size; 20% lump-sum discount.",
     location: "Beside Commercial District West, bordering Sector J, on a 180-ft boulevard to Chakri Road & M-2.",
     features: ["129.55-kanal community club", "180-ft boulevard", "Green belt & water channel", "Residential + commercial"],
     bestFor: "Families sizing up (to 2 Kanal) and patient long-term investors.",
@@ -285,7 +320,7 @@ export type BlockPage = {
   heroImage: string;
   intro: string[];
   planStructure: string;
-  usesStandardGrid: boolean; // show the residentialPlan table
+  planType: "model" | "installment" | "none"; // which official table to render
   extraPlanNote?: string;
   locationPoints: string[];
   whyInvest: string[];
@@ -307,8 +342,8 @@ export const blockPages: Record<string, BlockPage> = {
       "Infrastructure is the block's calling card: wide carpeted roads, landscaped green spaces, proximity to the Central Business District, jogging tracks, and amenity-rich planning that includes malls and sports facilities. For anyone weighing Faisal Town Phase 2, Sector O is usually the first block worth evaluating.",
     ],
     planStructure:
-      "Residential plots follow a flexible installment plan with roughly 20% down and a ~20% discount on lump-sum payment. Model Block commercial plots run on a 25% down payment with a multi-year quarterly plan and 15% local / 20% overseas lump-sum discounts.",
-    usesStandardGrid: true,
+      "The Model Block (Sector O, together with Sector Q & R) is offered on a full-payment basis with a 20% discount on the actual price — development charges included. Model Block commercial plots (around 13.33 Marla) are priced separately on a 25% down payment with a multi-year plan and 15% local / 20% overseas lump-sum discounts.",
+    planType: "model",
     extraPlanNote:
       "Commercial (13.33 Marla) is priced separately — indicatively ~PKR 38.4M standard / ~PKR 42.4M corner before discounts.",
     locationPoints: [
@@ -356,8 +391,8 @@ export const blockPages: Record<string, BlockPage> = {
       "With wide roads, underground utilities, landscaped parks and its position on the widest boulevard in the society, N Block is built for both comfortable living and long-term capital appreciation as the CBD matures.",
     ],
     planStructure:
-      "N Block is offered on a 36-month installment plan with fixed monthly amounts (from ~PKR 60,000/month) plus a down payment, with a ~20% discount available on lump-sum payment. Corner and main-road plots may carry additional charges. Payment by pay order, demand draft or cash — cheques are not accepted.",
-    usesStandardGrid: true,
+      "N Block is offered on a 36-month installment plan with fixed monthly amounts (from PKR 60,000/month) plus a down payment, with a 20% discount available on lump-sum payment. Corner and main-road plots may carry additional charges. Payment by pay order, demand draft or cash — cheques are not accepted.",
+    planType: "installment",
     locationPoints: [
       "Directly on the 365-ft main boulevard — the widest road in Faisal Town Phase 2",
       "Immediately beside the Central Business District (CBD) for commercial access",
@@ -393,20 +428,20 @@ export const blockPages: Record<string, BlockPage> = {
     slug: "overseas-enclave",
     metaTitle: "Overseas Enclave Faisal Town Phase 2 — Payment Plan & Booking for Overseas Pakistanis",
     metaDescription:
-      "Overseas Enclave Faisal Town Phase 2 — a premium gated block for overseas Pakistanis. 4.5-year quarterly payment plan, plot sizes up to 2 Kanal, location & remote booking.",
+      "Overseas Enclave Faisal Town Phase 2 — a premium gated block for overseas Pakistanis. 36-month installment plan, plot sizes up to 2 Kanal, location & remote booking.",
     tagline: "The premium, gated block built for overseas Pakistanis",
     heroImage: "/images/gallery/sector-entrance.webp",
     intro: [
       "The Overseas Enclave is the premium address of Faisal Town Phase 2, designed specifically for overseas Pakistanis who want an international-standard home and a secure investment back home. Built around a 365-ft main boulevard with more than 40% of its land reserved for open space and community facilities, it is one of the most thoughtfully planned blocks in the society.",
       "The Enclave offers the widest range of plot sizes in Faisal Town Phase 2 — 5, 8, 10 and 14 Marla plus 1 and 2 Kanal — giving overseas families the flexibility to choose everything from a starter plot to a large luxury home. It is a fully gated community with 24/7 security, underground utilities, and planned international-standard schools and a hospital.",
-      "Financing is tailored for buyers abroad: a 4.5-year plan with a down payment followed by 15 quarterly installments and a final payment, plus a lump-sum discount that is typically more generous for overseas buyers. The quarterly rhythm suits investors who remit on a schedule rather than monthly.",
+      "Financing is tailored for buyers abroad: a 36-month installment plan with a down payment followed by 36 fixed monthly installments, plus a 20% discount on lump-sum payment. Development charges are included in the plot price, so there are no surprise costs later.",
       "At Jumpify Marketing we run a dedicated overseas desk that lets you book and manage your Overseas Enclave investment entirely remotely — video walkthroughs, live availability, secure payments and documentation handled on your behalf, with full transparency about the project's NOC status.",
     ],
     planStructure:
-      "The Overseas Enclave runs on a 4.5-year plan: a down payment, 15 quarterly installments and a final payment, with a ~20% discount on lump-sum payment (often more favourable for overseas buyers). Plot sizes extend up to 2 Kanal.",
-    usesStandardGrid: true,
+      "The Overseas Enclave is offered on a 36-month installment plan: a down payment, 36 monthly installments, and a 20% discount on lump-sum payment. Development charges are included and plot sizes extend up to 2 Kanal.",
+    planType: "installment",
     extraPlanNote:
-      "A 2 Kanal option is available in this block (indicative from ~PKR 19M+ before discount). Overseas buyers typically receive an enhanced lump-sum discount.",
+      "A 2 Kanal (1000 sq yd) option is available — PKR 19,295,000 (or PKR 15,430,000 on lump-sum).",
     locationPoints: [
       "Built around a 365-ft main boulevard with 40%+ of land reserved for open space",
       "Close to the Thalian Interchange on the M-2 Motorway",
@@ -416,7 +451,7 @@ export const blockPages: Record<string, BlockPage> = {
     whyInvest: [
       "Premium, fully-gated planning tailored to overseas Pakistani buyers",
       "Widest plot-size range in the society, including 1 and 2 Kanal",
-      "Comfortable 4.5-year quarterly plan with an enhanced overseas discount",
+      "Comfortable 36-month installment plan with a 20% lump-sum discount",
       "Fully remote booking and management through our dedicated overseas desk",
     ],
     faqs: [
@@ -430,7 +465,7 @@ export const blockPages: Record<string, BlockPage> = {
       },
       {
         q: "What plot sizes and payment plan does it offer?",
-        a: "The Overseas Enclave offers 5, 8, 10 and 14 Marla plus 1 and 2 Kanal plots on a 4.5-year plan — a down payment, 15 quarterly installments and a final payment, with a lump-sum discount that is typically enhanced for overseas buyers.",
+        a: "The Overseas Enclave offers 5, 8, 10 and 14 Marla plus 1 and 2 Kanal plots on a 36-month installment plan — a down payment plus 36 fixed monthly installments, with a 20% discount on lump-sum payment. Development charges are included.",
       },
       {
         q: "Is the Overseas Enclave a safe investment?",
@@ -474,7 +509,7 @@ export const whyInvest = [
   },
   {
     title: "Easy 4-Year Installments",
-    text: "A low entry barrier with ~20% down and 16 quarterly installments makes it accessible to salaried and overseas investors alike.",
+    text: "A choice of full payment (with a 20% discount) or an easy 36-month installment plan makes it accessible to salaried and overseas investors alike.",
   },
   {
     title: "Active On-Ground Development",
@@ -508,11 +543,11 @@ export const ft2Faqs = [
   },
   {
     q: "What is the payment plan and down payment?",
-    a: "Plots are offered on an easy ~4-year plan with around 20% down payment and the balance in 16 quarterly installments. A ~20% discount is typically available on lump-sum (cash) payments. Contact us for the latest confirmed figures for your chosen block and plot size.",
+    a: "There are two options. The Model Block (Sector O, Q & R) is offered on full payment with a 20% discount. Other blocks such as the Overseas Enclave and N Block offer a 36-month installment plan — a down payment plus 36 fixed monthly installments — with a 20% discount on lump-sum payment. Development charges are included. Contact us for the confirmed figures for your chosen block.",
   },
   {
     q: "What is the price of a 5 Marla and 10 Marla plot?",
-    a: "As per the April 2026 revision, a 5 Marla plot is indicatively around PKR 39.75 Lac and a 10 Marla around PKR 72.6 Lac (varies by block). These are indicative dealer-published figures — request the official current rate list from us before booking.",
+    a: "As per the current developer rate sheet, a 5 Marla (5.56) plot is PKR 3,495,000 — or PKR 2,790,000 on full payment. A 10 Marla (10.89) plot is PKR 6,065,000 — or PKR 4,850,000 on full payment. Development charges are included; corner and main-road plots carry additional charges. Request the latest confirmed rate list before booking.",
   },
   {
     q: "Who is the owner and developer of Faisal Town Phase 2?",

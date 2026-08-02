@@ -53,7 +53,7 @@ export function Ft2Overview() {
               Located at the <strong className="text-navy">Thalian Interchange on the M-2 Motorway</strong> and
               connected to the Rawalpindi Ring Road, the society is roughly a 10–15 minute drive from the New
               Islamabad International Airport. It offers residential plots of 5, 8, 10 and 14 Marla plus 1 and 2
-              Kanal, along with commercial plots — all on an easy 4-year installment plan.
+              Kanal, along with commercial plots — on full payment or an easy 36-month installment plan.
             </p>
             <p>
               As an authorised sales partner, {"Jumpify Marketing"} helps you choose the right block — Sector O

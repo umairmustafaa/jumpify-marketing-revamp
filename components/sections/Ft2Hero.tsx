@@ -7,7 +7,7 @@ import { Icon } from "@/components/Icons";
 const trustChips = [
   "M-2 Motorway · Thalian Interchange",
   "~15 min from Islamabad Airport",
-  "Easy 4-Year Installments",
+  "Full Payment or 36-Month Plan",
 ];
 
 export function Ft2Hero() {
@@ -46,8 +46,8 @@ export function Ft2Hero() {
             </h1>
 
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/80">
-              Secure your plot in Islamabad&apos;s fast-developing community on the M-2 Motorway — on an easy
-              4-year installment plan, with honest guidance and full documentation support.
+              Secure your plot in Islamabad&apos;s fast-developing community on the M-2 Motorway — on full
+              payment or an easy 36-month installment plan, with honest guidance and full documentation support.
             </p>
 
             {/* Price hook */}
@@ -62,7 +62,7 @@ export function Ft2Hero() {
               <div className="text-sm text-white/75">
                 {ft2.priceHook.note}
                 <br />
-                <span className="text-white/50">*Indicative · updated {ft2.lastUpdated}</span>
+                <span className="text-white/50">*Full-payment rate · updated {ft2.lastUpdated}</span>
               </div>
             </div>
 

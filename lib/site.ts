@@ -527,8 +527,8 @@ export const posts: Post[] = [
     heroImage: "/images/projects/faisal-town-phase-2.webp",
     body: [
       "If you are planning to invest in Faisal Town Phase 2, the payment plan is usually the first thing you want to see. This guide breaks down the updated 2026 pricing for residential and commercial plots, along with the installment structure, so you can plan your investment with clarity.",
-      "Faisal Town Phase 2 is offered on an easy four-year installment plan. In most blocks you pay roughly 20% as down payment and the remaining balance across 16 quarterly installments, which makes it accessible for salaried buyers and overseas investors alike. A lump-sum (cash) purchase typically earns a discount of around 20%.",
-      "Following the April 2026 revision, indicative residential prices are approximately: 5 Marla from PKR 39.75 Lac, 8 Marla from PKR 55.4 Lac, 10 Marla from PKR 72.6 Lac, 14 Marla from PKR 91.4 Lac, and 1 Kanal from PKR 1.23 Crore. Newly launched blocks such as Sector P and Sector T sometimes carry discounted introductory rates below these figures.",
+      "Faisal Town Phase 2 offers two clear ways to buy. The Model Block (Sector O, Q & R) is sold on full payment with a 20% discount on the actual price. Other blocks — including the Overseas Enclave and N Block — offer a 36-month installment plan: a down payment followed by fixed monthly installments, with a 20% discount for anyone who pays lump-sum. Development charges are included in the price either way.",
+      "As per the current developer rate sheet, actual (installment) prices are approximately: 5 Marla (5.56) PKR 34.95 Lac, 8 Marla PKR 46.65 Lac, 10 Marla (10.89) PKR 60.65 Lac, 14 Marla (14.22) PKR 75.85 Lac, and 1 Kanal PKR 1.02 Crore. On full payment the same plots come down to roughly PKR 27.9 Lac, 37.3 Lac, 48.5 Lac, 60.6 Lac and 81.2 Lac respectively. A 2 Kanal option is available in the Overseas Enclave.",
       "Prices vary by block. Premium and overseas blocks are priced higher than general residential sectors, while newly launched blocks are usually the most affordable entry point with the most upside. Commercial plots in Sector O and the Central Business District follow a separate plan, generally with a 25% down payment and a three-year schedule.",
       "Because rates are revised periodically as development progresses, always request the current official rate list before booking. At Jumpify Marketing we share the latest confirmed figures for your chosen block and plot size, with no hidden charges — just an honest breakdown of total cost, down payment and installments.",
       "Ready to see the full block-wise plan? Contact our team and we'll send the complete Faisal Town Phase 2 payment plan directly to your WhatsApp.",
@@ -581,8 +581,8 @@ export const posts: Post[] = [
     heroImage: "/images/projects/faisal-jewel.webp",
     body: [
       "The 5 Marla plot is the most in-demand size in Faisal Town Phase 2, and for good reason: it offers the lowest entry price and the highest resale liquidity, because it attracts the largest pool of buyers in the twin cities market.",
-      "As per the April 2026 revision, a 5 Marla plot (dimensions 25×50) is indicatively priced from around PKR 39.75 Lac in general residential blocks. Newly launched blocks such as Sector P have carried discounted introductory rates closer to PKR 35.9 Lac, so the exact figure depends on which block you choose.",
-      "On the standard four-year plan you would typically pay about 20% down — roughly PKR 8 Lac — and the balance in 16 quarterly installments of approximately PKR 2 Lac each. A cash purchase usually earns a discount of around 20%.",
+      "As per the current developer rate sheet, a 5 Marla plot (25×50, officially 5.56 Marla) is priced at PKR 34.95 Lac on the installment plan, or PKR 27.9 Lac on full payment — a saving of around PKR 7 Lac. Development charges are already included; corner and main-road plots carry additional charges.",
+      "On the installment route you pay a down payment of around PKR 13.35 Lac and then 36 fixed monthly installments of about PKR 60,000. Prefer to pay upfront? The full-payment price of PKR 27.9 Lac is the lowest way in.",
       "For first-time investors and overseas buyers, the 5 Marla is often the smartest starting point: manageable installments, broad demand on resale, and meaningful upside as the society develops and (potentially) secures its NOC.",
       "Prices move with each rate revision, so confirm the current figure before booking. Contact Jumpify Marketing for today's confirmed 5 Marla rate and the blocks with the best value right now.",
     ],
@@ -598,8 +598,8 @@ export const posts: Post[] = [
     heroImage: "/images/projects/faisal-hills.webp",
     body: [
       "The 10 Marla plot in Faisal Town Phase 2 is the sweet spot for buyers who want a larger home or stronger appreciation potential than a 5 Marla, without stepping up to a full 1 Kanal budget.",
-      "Following the April 2026 revision, a 10 Marla plot (dimensions 35×70, officially 10.89 Marla) is indicatively priced from around PKR 72.6 Lac in general residential blocks, with premium and overseas blocks priced higher.",
-      "On the four-year plan, expect roughly 20% down — about PKR 14.5 Lac — and the remaining balance across 16 quarterly installments of approximately PKR 3.6 Lac. Lump-sum buyers typically receive around a 20% discount.",
+      "As per the current developer rate sheet, a 10 Marla plot (35×70, officially 10.89 Marla) is priced at PKR 60.65 Lac on the installment plan, or PKR 48.5 Lac on full payment — a saving of over PKR 12 Lac. Development charges are included.",
+      "On the installment plan, expect a down payment of about PKR 22.85 Lac followed by 36 monthly installments of roughly PKR 1.05 Lac. Lump-sum buyers pay PKR 48.5 Lac.",
       "The 10 Marla appeals to end-users planning a spacious home and to medium-to-long-term investors, since larger plots in prime blocks often appreciate more strongly once development matures. Liquidity is slightly lower than 5 Marla but still healthy.",
       "For the current confirmed 10 Marla rate and the best-value blocks available today, get in touch with Jumpify Marketing.",
     ],

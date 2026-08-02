@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { site } from "@/lib/site";
-import { residentialPlan } from "@/lib/ft2";
+import { plotSizeOptions } from "@/lib/ft2";
 import { reportConversion, trackEvent } from "@/lib/gtag";
 import { Icon } from "./Icons";
 
@@ -107,9 +107,9 @@ export function LeadForm({
       </div>
       <select name="size" defaultValue="" className={inputClass} aria-label="Plot size of interest">
         <option value="">Plot size of interest (optional)</option>
-        {residentialPlan.map((p) => (
-          <option key={p.size} value={p.size}>
-            {p.size}
+        {plotSizeOptions.map((size) => (
+          <option key={size} value={size}>
+            {size}
           </option>
         ))}
         <option value="Commercial">Commercial plot</option>

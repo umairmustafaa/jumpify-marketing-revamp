@@ -8,6 +8,7 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { StickyContactBar } from "@/components/StickyContactBar";
 import { ConversionTracking } from "@/components/ConversionTracking";
 import { JsonLd, organizationSchema } from "@/components/JsonLd";
+import { Analytics } from "@vercel/analytics/next";
 import { site } from "@/lib/site";
 
 const poppins = Poppins({
@@ -75,6 +76,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <WhatsAppButton />
         <StickyContactBar />
         <ConversionTracking />
+        <Analytics />
         <Script src="https://www.googletagmanager.com/gtag/js?id=AW-17999922348" strategy="afterInteractive" />
         <Script id="google-ads" strategy="afterInteractive">
           {`

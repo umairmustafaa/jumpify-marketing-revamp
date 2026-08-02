@@ -63,6 +63,7 @@ export async function POST(req: NextRequest) {
     }
 
     // ── 2. Google Sheets webhook (GET + query params — avoids redirect body loss) ──
+    let sheetLogged = false;
     if (sheetUrl) {
       const params = new URLSearchParams({
         name,
@@ -74,11 +75,29 @@ export async function POST(req: NextRequest) {
         source:    "Website Form",
         timestamp: new Date().toISOString(),
       });
-      fetch(`${sheetUrl}?${params.toString()}`)
-        .catch((err) => console.error("Sheet webhook error:", err));
+      try {
+        // MUST await: on serverless (Vercel) an un-awaited fetch is dropped when
+        // the function returns, so the row never reaches the sheet. Apps Script
+        // redirects (302) to script.googleusercontent.com, so follow redirects.
+        const sheetRes = await fetch(`${sheetUrl}?${params.toString()}`, {
+          method: "GET",
+          redirect: "follow",
+        });
+        sheetLogged = sheetRes.ok;
+        if (!sheetRes.ok) {
+          console.error("Sheet webhook non-OK:", sheetRes.status, await sheetRes.text().catch(() => ""));
+        }
+      } catch (err) {
+        console.error("Sheet webhook error:", err);
+      }
+    } else {
+      console.warn(
+        "GOOGLE_SHEET_WEBHOOK_URL is not set — lead was NOT logged to the Google Sheet. " +
+          "Set it in your environment (e.g. Vercel → Settings → Environment Variables)."
+      );
     }
 
-    return NextResponse.json({ ok: true });
+    return NextResponse.json({ ok: true, sheetLogged });
   } catch (err) {
     console.error("Contact route error:", err);
     return NextResponse.json({ error: "Unexpected server error." }, { status: 500 });

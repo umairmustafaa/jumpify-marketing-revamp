@@ -4,7 +4,8 @@ import { site } from "@/lib/site";
 // Contact form API route.
 // Destinations (all optional — if env var is absent the step is silently skipped):
 //   1. Resend email  →  RESEND_API_KEY + CONTACT_TO_EMAIL
-//   2. Google Sheets →  GOOGLE_SHEET_WEBHOOK_URL  (Apps Script Web App URL)
+//   2. Google Sheets →  GOOGLE_SHEET_WEBHOOK_URL or GOOGLE_SHEETS_WEBHOOK_URL
+//                        (Apps Script Web App URL — either spelling works)
 // WhatsApp is handled client-side in ContactForm.tsx.
 
 export async function POST(req: NextRequest) {
@@ -18,7 +19,9 @@ export async function POST(req: NextRequest) {
 
     const apiKey   = process.env.RESEND_API_KEY;
     const toEmail  = process.env.CONTACT_TO_EMAIL ?? site.email;
-    const sheetUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL;
+    // Accept both spellings so it works regardless of how the env var was named.
+    const sheetUrl =
+      process.env.GOOGLE_SHEET_WEBHOOK_URL ?? process.env.GOOGLE_SHEETS_WEBHOOK_URL;
 
     // Build a clean plain-text body for the email notification.
     const lines = [
@@ -92,7 +95,7 @@ export async function POST(req: NextRequest) {
       }
     } else {
       console.warn(
-        "GOOGLE_SHEET_WEBHOOK_URL is not set — lead was NOT logged to the Google Sheet. " +
+        "GOOGLE_SHEET(S)_WEBHOOK_URL is not set — lead was NOT logged to the Google Sheet. " +
           "Set it in your environment (e.g. Vercel → Settings → Environment Variables)."
       );
     }

@@ -122,6 +122,14 @@ export default function BlocksPage() {
                     Full {b.name} guide <Icon name="arrow" width={15} height={15} />
                   </Link>
                 )}
+                {b.type === "Commercial" && (
+                  <Link
+                    href="/commercial"
+                    className="inline-flex items-center gap-2 rounded-full border border-gold px-5 py-2.5 text-sm font-semibold text-gold-dark transition-colors hover:bg-gold hover:text-navy-900"
+                  >
+                    Full commercial guide <Icon name="arrow" width={15} height={15} />
+                  </Link>
+                )}
               </div>
             </Reveal>
           ))}

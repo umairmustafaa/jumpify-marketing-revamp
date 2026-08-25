@@ -13,14 +13,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  const staticRoutes = ["", "/blocks", "/about", "/projects", "/blog", "/contact", "/privacy-policy"].map(
-    (path) => ({
-      url: `${base}${path}`,
-      lastModified: now,
-      changeFrequency: "weekly" as const,
-      priority: path === "" ? 1 : path === "/blocks" ? 0.9 : 0.8,
-    })
-  );
+  const staticRoutes = [
+    "",
+    "/payment-plan",
+    "/commercial",
+    "/blocks",
+    "/about",
+    "/projects",
+    "/blog",
+    "/contact",
+    "/privacy-policy",
+  ].map((path) => ({
+    url: `${base}${path}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: path === "" ? 1 : ["/payment-plan", "/commercial", "/blocks"].includes(path) ? 0.9 : 0.8,
+  }));
 
   const projectRoutes = projects.map((p) => ({
     url: `${base}/projects/${p.slug}`,

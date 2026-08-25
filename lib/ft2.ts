@@ -96,6 +96,118 @@ export const paymentNotes = [
   "Prices are per the developer’s current rate sheet and may be revised — confirm before booking.",
 ];
 
+// ── Commercial plots (dedicated /commercial landing page) ──────────────────
+// Prices below are INDICATIVE (dealer-published) — the residential tables above
+// are official rates, but commercial rates vary by category/position, so every
+// figure here is framed as approximate and must be confirmed before booking.
+
+export type CommercialRow = {
+  category: string;
+  size: string;
+  price: string; // indicative price (before lump-sum discounts)
+  planNote: string;
+};
+
+// Sector O (Model Block) commercial — the marquee boulevard plots.
+export const sectorOCommercialPlan: CommercialRow[] = [
+  {
+    category: "Model Block — Standard",
+    size: "13.33 Marla",
+    price: "~PKR 38,400,000",
+    planNote: "25% down + 12 quarterly installments (3 years)",
+  },
+  {
+    category: "Model Block — Corner",
+    size: "13.33 Marla",
+    price: "~PKR 42,400,000",
+    planNote: "25% down + 12 quarterly installments (3 years)",
+  },
+];
+
+// Society-wide commercial catalogue — uniform 4-year quarterly plan.
+export const generalCommercialPlan: CommercialRow[] = [
+  {
+    category: "Commercial — Entry Size",
+    size: "5.33 Marla",
+    price: "~PKR 13,400,000",
+    planNote: "25% down + 16 quarterly installments (4 years)",
+  },
+  {
+    category: "Commercial — Large",
+    size: "13.33 Marla",
+    price: "~PKR 46,700,000",
+    planNote: "25% down + 16 quarterly installments (4 years)",
+  },
+  {
+    category: "Main Boulevard & Markaz",
+    size: "Priced per sq yd",
+    price: "from ~PKR 20,000 / sq yd",
+    planNote: "25% down + quarterly plan · position premiums apply",
+  },
+];
+
+export const commercialNotes = [
+  "Lump-sum discounts: 15% for local buyers, 20% for overseas buyers (Model Block commercial).",
+  "Development charges are included in the quoted commercial rates.",
+  "Corner, boulevard-facing and Markaz plots carry position premiums.",
+  "Commercial rates vary by category and position — always request the current official rate sheet before booking.",
+];
+
+export const commercialContent = {
+  metaTitle: "Faisal Town Phase 2 Commercial Plots — Payment Plan & Prices 2026",
+  metaDescription:
+    "Commercial plots in Faisal Town Phase 2 Islamabad — 5.33 to 13.33 Marla plus boulevard & Markaz plots. 25% down payment with 3–4 year quarterly installment plans, indicative 2026 prices, location & booking guidance.",
+  tagline: "Boulevard, Markaz & Model Block commercial plots on easy quarterly plans",
+  heroImage: "/images/gallery/aerial-community.png",
+  intro: [
+    "Faisal Town Phase 2 offers one of the largest commercial catalogues of any new society on the M-2 corridor — roughly a dozen commercial categories spanning fixed-size plots from 5.33 to 13.33 Marla, per-square-yard main-boulevard frontage, and plots inside the Central Commercial Markaz. With the society positioned at the Thalian Interchange, minutes from the New Islamabad International Airport and beside Capital Smart City, its commercial zones are designed to serve a catchment far beyond the society itself.",
+    "The marquee opportunity is the Model Block (Sector O) commercial strip: 13.33 Marla standard and corner plots fronting the 350-ft main boulevard with a B+G+6 building envelope — ground plus six floors of rentable space. Around 80% of the land leveling in Sector O is complete and the boulevard is already operational, which is why these plots are marketed for corporate offices and multi-floor retail wanting maximum visibility.",
+    "Financing is friendlier than most commercial markets in the twin cities: a 25% down payment followed by quarterly installments over three years (Model Block) or four years (society-wide catalogue), with development charges included in the rate. Lump-sum buyers receive a 15% discount locally or 20% for overseas Pakistanis.",
+    "As with every Faisal Town Phase 2 investment, we advise commercial buyers with full transparency: the society's NOC is under process, commercial rates vary by category and position, and the figures on this page are indicative — we will pull the current official rate sheet and live availability for you before you commit a rupee.",
+  ],
+  whyInvest: [
+    "B+G+6 envelope on Model Block boulevard plots — up to 7 floors of rentable area",
+    "25% down with 3–4 year quarterly plans, development charges included",
+    "350-ft operational boulevard frontage with ~80% land leveling complete in Sector O",
+    "Catchment includes the airport corridor, Capital Smart City and the Ring Road",
+    "15% local / 20% overseas lump-sum discounts for cash buyers",
+    "Commercial demand compounds as residential blocks hand over possession",
+  ],
+  locationPoints: [
+    "Commercial zones front the 350-ft main boulevard linking Gate 1 and Gate 2",
+    "Direct M-2 Motorway access at the Thalian Interchange (~2 km from the main gate)",
+    "Roughly 10–15 minutes from the New Islamabad International Airport",
+    "Rawalpindi Ring Road connection for twin-cities customer traffic",
+    "Central Commercial Markaz planned at the heart of the society",
+  ],
+  faqs: [
+    {
+      q: "What commercial plot sizes are available in Faisal Town Phase 2?",
+      a: "The catalogue spans roughly a dozen categories: fixed-size plots from 5.33 Marla up to 13.33 Marla, per-square-yard plots on the main boulevard, and plots inside the Central Commercial Markaz. The Model Block (Sector O) offers 13.33 Marla standard and corner commercial plots fronting the 350-ft boulevard.",
+    },
+    {
+      q: "What is the commercial payment plan?",
+      a: "Commercial plots run on a 25% down payment followed by quarterly installments — 12 quarters (3 years) for Model Block commercial and 16 quarters (4 years) for the society-wide catalogue. Development charges are included, and lump-sum payment earns a 15% discount for local buyers or 20% for overseas buyers.",
+    },
+    {
+      q: "What do commercial plots cost in Faisal Town Phase 2?",
+      a: "Indicatively, fixed-size commercial plots range from around PKR 13.4M (5.33 Marla) to PKR 46.7M (13.33 Marla), Model Block boulevard commercial runs ~PKR 38.4M standard / ~PKR 42.4M corner, and boulevard/Markaz plots start from roughly PKR 20,000 per square yard. Rates vary by category and position — request the current official rate sheet before booking.",
+    },
+    {
+      q: "How many floors can I build on a commercial plot?",
+      a: "Model Block boulevard commercial plots are marketed with a B+G+6 envelope — basement, ground and six upper floors — making them suitable for corporate offices, multi-floor retail and mixed commercial use. Envelopes for other categories should be confirmed per plot.",
+    },
+    {
+      q: "Is commercial in Faisal Town Phase 2 a good investment?",
+      a: "The fundamentals are strong: airport-corridor location, an operational 350-ft boulevard, and commercial demand that grows as residential possession is handed over. Balance this against the society's NOC being under process — early pricing is the opportunity, but confirm the latest status before booking. We give every commercial buyer an honest, current picture.",
+    },
+    {
+      q: "Can overseas Pakistanis buy commercial plots remotely?",
+      a: "Yes. Our overseas desk handles commercial bookings end-to-end — live availability, video consultation, secure remote payment to the developer, and documentation — and overseas buyers get the larger 20% lump-sum discount on Model Block commercial.",
+    },
+  ],
+};
+
 // ── Blocks / sectors — the complete directory ──────────────────────────────
 // NOTE ON NOC: some individual dealer pages claim certain blocks are "NOC
 // approved". The verified, authoritative status is that the WHOLE project's NOC

@@ -8,7 +8,7 @@ export const site = {
   description:
     "Jumpify Marketing is a trusted real estate investment consultancy in Pakistan & Dubai. We specialise in secure, NOC-approved, high-yield property investments in Faisal Town Phase 2 and premier projects across Islamabad and Rawalpindi.",
   // Update this to your live domain before deploying.
-  url: "https://jumpifymarketing.com",
+  url: "https://www.jumpifymarketing.com",
   foundedYear: 2019,
   phone: "+92 340 8988872",
   phoneHref: "+923408988872",
@@ -516,6 +516,112 @@ export type Post = {
 };
 
 export const posts: Post[] = [
+  {
+    slug: "faisal-town-phase-2-development-status-2026",
+    title: "Faisal Town Phase 2 Development Status: Ground Report (August 2026)",
+    excerpt:
+      "What is actually happening on the ground in Faisal Town Phase 2 — roads, sectors under development, machinery at site and what to expect next.",
+    date: "2026-08-24",
+    readingTime: "6 min read",
+    category: "Development Update",
+    heroImage: "/images/gallery/aerial-community.png",
+    body: [
+      "Marketing brochures are one thing; the ground reality is another. Buyers regularly ask us what is actually built in Faisal Town Phase 2 today, so here is an honest development snapshot as of August 2026.",
+      "The most visible progress is in and around Sector O, the Model Block. Earthwork, levelling and road carpeting are the most advanced here, which is why the developer markets it as semi-developed and offers the earliest possession timeline — roughly one to one-and-a-half years for early full-payment buyers.",
+      "The society's spine is the 350-ft main boulevard connecting the M-2 Motorway gate at Thalian with the second gate on the Rawalpindi Ring Road side. Sections of this boulevard and the main gate infrastructure are the developer's showcase works, alongside ongoing cutting and filling in the residential sectors closest to the entrance.",
+      "Newer blocks — including N Block and the general residential sectors deeper in the site — remain at an earlier stage: demarcation, earthwork and machinery mobilisation rather than finished streets. That is normal for a project of this scale, but it means possession there is a longer-horizon expectation, not a near-term one.",
+      "Two honest caveats. First, development pace in any society ultimately depends on sales momentum and approvals — and Faisal Town Phase 2's NOC is still under process, which you should weigh alongside the physical progress. Second, always judge progress with your own eyes: we encourage every serious buyer to take a site visit rather than rely on photos alone.",
+      "Jumpify Marketing arranges guided site visits from Islamabad and Rawalpindi, and can share fresh video walkthroughs with overseas clients on WhatsApp. Contact us for the latest ground footage before you decide.",
+    ],
+  },
+  {
+    slug: "faisal-town-phase-2-1-kanal-price",
+    title: "1 Kanal Plot in Faisal Town Phase 2: 2026 Price & Payment Plan",
+    excerpt:
+      "The 2026 price of a 1 Kanal plot in Faisal Town Phase 2, the full-payment discount, installment breakdown, and who this size suits best.",
+    date: "2026-08-19",
+    readingTime: "5 min read",
+    category: "Plot Prices",
+    heroImage: "/images/projects/faisal-town-phase-2.webp",
+    body: [
+      "The 1 Kanal plot is the flagship residential size in Faisal Town Phase 2 — the choice of buyers planning a large family home and of investors who want maximum long-term appreciation in prime blocks.",
+      "As per the current developer rate sheet, a 1 Kanal plot (50×90) is priced at PKR 1.02 Crore on the 36-month installment plan, or roughly PKR 81.2 Lac on full payment — a lump-sum saving of over PKR 20 Lac, the largest discount of any residential size. Development charges are included in the price.",
+      "On the installment route, expect a down payment of around PKR 38.6 Lac followed by 36 monthly installments of roughly PKR 1.76 Lac. Corner, main-boulevard and park-facing plots carry standard extra charges, and premium blocks such as the Overseas Enclave are priced above general sectors. A 2 Kanal option also exists in the Overseas Enclave for buyers who want the largest footprint available.",
+      "Who should buy a 1 Kanal? End-users who intend to build a spacious home once possession opens, and patient investors: historically, in societies from this developer group, larger plots in prime locations have appreciated strongly once development matures — though liquidity is lower than 5 and 8 Marla, so plan a longer holding period.",
+      "As always, prices are revised periodically and the project's NOC remains under process, so confirm both the current rate and the approval status before committing. Contact Jumpify Marketing for today's confirmed 1 Kanal rates and the specific blocks with availability.",
+    ],
+  },
+  {
+    slug: "faisal-town-phase-2-8-marla-price",
+    title: "8 Marla Plot in Faisal Town Phase 2: 2026 Price & Installment Plan",
+    excerpt:
+      "Updated 2026 pricing for the 8 Marla plot in Faisal Town Phase 2 — installments, full-payment discount, and why it's the value sweet spot.",
+    date: "2026-08-13",
+    readingTime: "5 min read",
+    category: "Plot Prices",
+    heroImage: "/images/projects/faisal-heights.webp",
+    body: [
+      "The 8 Marla is the quiet achiever of Faisal Town Phase 2: bigger than the entry-level 5 Marla, meaningfully cheaper than a 10 Marla, and large enough (30×60) for a comfortable double-storey family home.",
+      "As per the current developer rate sheet, an 8 Marla plot is priced at PKR 46.65 Lac on the 36-month installment plan, or PKR 37.3 Lac on full payment — a saving of more than PKR 9 Lac for lump-sum buyers. Development charges are included either way.",
+      "On installments, plan for a down payment of around PKR 17.85 Lac followed by 36 fixed monthly installments of roughly PKR 80,000. As with all sizes, corner and main-road locations carry extra charges, and rates differ between general blocks, the Model Block and the Overseas Enclave.",
+      "For many families the 8 Marla hits the practical sweet spot: the monthly installment stays under a lakh, the finished home size is genuinely comfortable, and resale demand sits close behind the 5 Marla because the buyer pool in the twin cities remains broad at this price point.",
+      "Rates are revised as development progresses and the NOC (currently under process) moves forward — so always confirm the live figure before booking. Message Jumpify Marketing on WhatsApp for today's confirmed 8 Marla rate and current block availability.",
+    ],
+  },
+  {
+    slug: "faisal-town-phase-2-vs-capital-smart-city",
+    title: "Faisal Town Phase 2 vs Capital Smart City: Honest 2026 Comparison",
+    excerpt:
+      "Two neighbouring M-2 Motorway societies compared — entry price, development stage, approvals and which fits your investment goals in 2026.",
+    date: "2026-08-07",
+    readingTime: "7 min read",
+    category: "Comparison",
+    heroImage: "/images/gallery/aerial-community.png",
+    body: [
+      "Faisal Town Phase 2 and Capital Smart City are literal neighbours — both sit off the M-2 Motorway near the Thalian Interchange and the new Islamabad International Airport. Because the locations are so similar, the comparison really comes down to price, development stage and approvals.",
+      "Entry price is Faisal Town Phase 2's strongest card. A 5 Marla plot starts around PKR 34.95 Lac on installments (PKR 27.9 Lac full payment), which is significantly below comparable categories in Capital Smart City's developed blocks. You are effectively paying launch-stage prices next door to a society already commanding mature-stage prices.",
+      "Development stage favours Capital Smart City. It launched years earlier, has delivered possession in several blocks, and offers functioning infrastructure — overhead bridge access, operational mosque, parks and commercial areas. Faisal Town Phase 2 is at a far earlier stage, with development concentrated around Sector O and the main boulevard.",
+      "On approvals, the picture needs honesty on both sides: Capital Smart City's planning permission history with RDA has had its own ups and downs, while Faisal Town Phase 2's NOC is currently under process with the approval reported to be with PHATA. In both cases we tell buyers the same thing — verify the current status with the authority at the time you buy, not at the time an article was written.",
+      "Developer track record is Faisal Town Phase 2's counter-argument: the group behind it delivered Faisal Town Phase 1 (F-18) and Faisal Hills, both real, populated communities. That history is why many investors are comfortable entering early despite the pending approval.",
+      "Our take: choose Capital Smart City if you want a developed environment and nearer-term possession at a higher ticket. Choose Faisal Town Phase 2 if you want the lowest entry price on this corridor and can hold while development and approvals mature. Jumpify Marketing can model both against your budget — get in touch for a side-by-side on today's actual rates.",
+    ],
+  },
+  {
+    slug: "verify-plot-documents-avoid-fraud-faisal-town-phase-2",
+    title: "How to Verify Plot Documents & Avoid Fraud in Faisal Town Phase 2",
+    excerpt:
+      "A practical checklist to verify files, receipts and dealers before you pay — and the common scams to avoid in early-stage societies.",
+    date: "2026-08-01",
+    readingTime: "6 min read",
+    category: "Buyer Tips",
+    heroImage: "/images/gallery/sector-entrance.webp",
+    body: [
+      "Early-stage societies attract genuine opportunity — and, unfortunately, fraud. Fake files, tampered receipts and unauthorised dealers appear wherever demand is hot. Here is the practical checklist we give every Faisal Town Phase 2 buyer before a single rupee changes hands.",
+      "First, verify the file itself with the developer. Every genuine Faisal Town Phase 2 file has a registration number that the developer's head office can confirm, along with the current owner's name and payment status. Never rely on photocopies or a dealer's word alone — insist on verification directly from the society's record before purchase.",
+      "Second, pay only through banking channels. Booking payments should be made via pay order or demand draft in the developer's official account name — never cash to an individual, and never to a dealer's personal account. Keep the deposit slip; it is your primary proof if anything is ever disputed.",
+      "Third, check the transfer trail on resale files. Ask for the complete chain: original booking form, all payment receipts, and any previous transfer letters. A missing link in the chain is a red flag worth walking away from, no matter how attractive the price.",
+      "Fourth, deal with authorised dealers only. The developer maintains a list of authorised sales partners; a registered office, a track record you can check, and written quotations on letterhead are the minimum. Be wary of rates dramatically below the market — a 'too good' price is the oldest hook in property fraud.",
+      "Finally, be clear-eyed about project status: Faisal Town Phase 2's NOC is under process, so factor that risk consciously rather than discovering it later. Jumpify Marketing verifies every file with the developer before we let a client transact, and we document each step in writing. If you want a purchase double-checked before you pay, send us the details — we're happy to help.",
+    ],
+  },
+  {
+    slug: "faisal-town-phase-2-balloting-possession-guide",
+    title: "Balloting & Possession in Faisal Town Phase 2: How It Works",
+    excerpt:
+      "What balloting means, when possession is expected in each block, and how to position your file or plot for the best outcome.",
+    date: "2026-07-30",
+    readingTime: "6 min read",
+    category: "Buyer Tips",
+    heroImage: "/images/projects/faisal-town-phase-1.webp",
+    body: [
+      "Balloting and possession are the two milestones that convert a paper investment into a physical plot — and they are the events around which prices typically move most. Here is how the process works in Faisal Town Phase 2 and what to expect.",
+      "Balloting is the draw through which files are assigned specific plot numbers and locations. Before balloting you hold a right to a plot of a given size in a given block; after balloting you know exactly where your plot sits — corner or general, park-facing or internal, near the boulevard or deeper inside. Location luck is why balloted plots of the same size can carry different market values.",
+      "Possession is the later milestone: the point at which development in your sector is complete enough for the society to hand over the plot for construction. In Faisal Town Phase 2, the semi-developed Sector O (Model Block) carries the earliest possession expectation — marketed at roughly one to one-and-a-half years for early full-payment buyers — while newly launched blocks sit on a longer horizon tied to development pace.",
+      "For investors, the price pattern seen across societies from this developer group is worth knowing: files typically appreciate in the run-up to balloting, then location-premium plots (corners, boulevard-facing) re-rate again at possession as construction begins. Sellers often exit just before or after ballot; end-users benefit most by holding through possession.",
+      "Practical tips: keep your installments current (defaulted files can be excluded from ballot), keep every receipt, and update your contact details with the developer so ballot notices reach you. And as always — Faisal Town Phase 2's NOC remains under process, so track approval news alongside development milestones.",
+      "Jumpify Marketing tracks balloting announcements and development progress block by block. Contact us to position your purchase around these milestones, or to get an honest read on where your existing file stands today.",
+    ],
+  },
   {
     slug: "faisal-town-phase-2-payment-plan-2026",
     title: "Faisal Town Phase 2 Payment Plan 2026: All Plot Sizes & Blocks",
